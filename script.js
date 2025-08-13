@@ -5,9 +5,10 @@ const taskList = document.getElementById("taskList");
 function addTask() {
   const value = taskInput.value.trim();
   if (value !== "") {
-    const check = document.createElement("input");
+    const check = document.createElement("div");
+    check.classList.add("check");
     const check2 = document.createElement("span");
-    check.type = "radio";
+
 
     const checkIcon = document.createElement("i");
     checkIcon.classList.add("fa-solid", "fa-circle-check");
@@ -29,12 +30,19 @@ function addTask() {
 
     taskList.append(task);
 
-    check.addEventListener("click", function () {
-      check.style.opacity = "0";
-      check2.style.display = "block";
-      task.style.textDecoration = "line-through";
-      task.style.opacity = "0.5";
-    });
+ check.addEventListener("click", function () {
+  if (check.style.opacity === "0") {
+    check.style.opacity = "1";
+    check2.style.display = "none";
+    task.style.textDecoration = "none";
+    task.style.opacity = "1";
+  } else {
+    check.style.opacity = "0";
+    check2.style.display = "block";
+    task.style.textDecoration = "line-through";
+    task.style.opacity = "0.5";
+  }
+});
 
     deleteButton.addEventListener("click", function () {
       task.remove();
