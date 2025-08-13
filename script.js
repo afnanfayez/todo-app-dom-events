@@ -9,7 +9,10 @@ function addTask() {
     const check2 = document.createElement("span");
     check.type = "radio";
 
-    check2.innerHTML = "<i class='fa-solid fa-circle-check'></i>";
+    const checkIcon = document.createElement("i");
+    checkIcon.classList.add("fa-solid", "fa-circle-check");
+    check2.appendChild(checkIcon);
+
     check2.classList.add("checkIcon");
 
     const task = document.createElement("li");
@@ -18,7 +21,9 @@ function addTask() {
     task.prepend(check2);
 
     const deleteButton = document.createElement("button");
-    deleteButton.innerHTML = "<i class='fa-solid fa-trash-can'></i>";
+    const deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("fa-solid", "fa-trash-can");
+    deleteButton.appendChild(deleteIcon);
     deleteButton.id = "deleteButton";
     task.append(deleteButton);
 
