@@ -32,9 +32,10 @@ taskInput.value = '';
     check.addEventListener("click",function(){   
     check.style.opacity="0";
      check2.style.display="block";
+      task.style.textDecoration="line-through";
     });
 
-    
+
     }
 
 });
