@@ -52,3 +52,34 @@ form button {
   border-radius: 2rem;
   cursor: pointer;
 }
+form button:hover {
+  background-color: #3c0647;
+}
+.ulTask {
+  margin-top: 1rem;
+}
+.ulTask ul{
+    list-style: none;
+}
+.ulTask ul input[type="radio"] {
+  margin-right: 0.5rem;
+  accent-color: #4e085f;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.ulTask ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  position: relative;
+}
+#deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  color: #4e085f;
+  font-size: 1.5rem;
+}
