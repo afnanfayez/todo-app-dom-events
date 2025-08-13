@@ -61,19 +61,26 @@ form button:hover {
 .ulTask ul{
     list-style: none;
 }
-.ulTask ul input[type="radio"] {
-  margin-right: 0.5rem;
-  accent-color: #4e085f;
-  width: 1.5rem;
-  height: 1.5rem;
-  cursor: pointer;
-}
 .ulTask ul li {
   padding: 0.5rem 0;
   border-bottom: 1px solid #ccc;
   font-size: 20px;
   position: relative;
 }
+.ulTask ul input[type="radio"] {
+  accent-color: #4e085f;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.checkIcon {
+    font-size: 1.5rem;
+    color: #4e085f;
+    position: absolute; 
+    display: none;
+}
+
 #deleteButton {
   background: none;
   border: none;
@@ -83,3 +90,7 @@ form button:hover {
   color: #4e085f;
   font-size: 1.5rem;
 }
+#deleteButton:hover {
+  color: #3c0647;
+}
+
