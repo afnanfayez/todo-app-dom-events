@@ -1,29 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body{
-        background: linear-gradient(135deg, #153677, #4e085f);
+body {
+  background: linear-gradient(135deg, #153677, #4e085f);
 }
-.container{
+.container {
   width: 450px;
-    min-height: 200px;
-    background-color: #ffffff;
-      margin: 10rem auto;  
-         padding: 2rem;
-         border-radius: 1rem;
+  min-height: 200px;
+  background-color: #ffffff;
+  margin: 10rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
 }
-h1{
-    color: #0a004d;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+h1 {
+  color: #0a004d;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-h1 i{
-    color: #4e085f;
-    margin-left: 0.5rem;
+h1 i {
+  color: #4e085f;
+  margin-left: 0.5rem;
 }
 form {
   position: relative;
@@ -45,7 +44,7 @@ form button {
   top: 50%;
   transform: translateY(-50%);
   height: calc(100% - 0.4rem);
-   padding: 0.5rem 2rem; 
+  padding: 0.5rem 2rem;
   background-color: #4e085f;
   color: #fff;
   border: none;
@@ -58,8 +57,8 @@ form button:hover {
 .ulTask {
   margin-top: 1rem;
 }
-.ulTask ul{
-    list-style: none;
+.ulTask ul {
+  list-style: none;
 }
 .ulTask ul li {
   padding: 0.5rem 0;
@@ -75,10 +74,10 @@ form button:hover {
   margin-right: 0.5rem;
 }
 .checkIcon {
-    font-size: 1.5rem;
-    color: #4e085f;
-    position: absolute; 
-    display: none;
+  font-size: 1.5rem;
+  color: #4e085f;
+  position: absolute;
+  display: none;
 }
 
 #deleteButton {
@@ -93,4 +92,3 @@ form button:hover {
 #deleteButton:hover {
   color: #3c0647;
 }
-
