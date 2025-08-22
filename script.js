@@ -14,11 +14,20 @@ function removeTaskFromStorage(id) {
   localStorage.setItem("tasks", JSON.stringify(filteredTasks));
 }
 
+function updateTaskStatusInStorage(id, completed) {
+  const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  const task = storedTasks.find(t => t.id === id);
+  if (task) {
+    task.completed = completed;
+    localStorage.setItem("tasks", JSON.stringify(storedTasks));
+  }
+}
+
 function loadTasksFromStorage() {
   return JSON.parse(localStorage.getItem("tasks")) || [];
 }
 
-function createTaskElement({ id, text }) {
+function createTaskElement({ id, text, completed = false }) {
   const check = document.createElement("div");
   check.classList.add("check");
 
@@ -41,17 +50,26 @@ function createTaskElement({ id, text }) {
   deleteButton.id = "deleteButton";
   task.append(deleteButton);
 
+  if (completed) {
+    check.style.opacity = "0";
+    check2.style.display = "block";
+    task.style.textDecoration = "line-through";
+    task.style.opacity = "0.5";
+  }
+
   check.addEventListener("click", function () {
     if (check.style.opacity === "0") {
       check.style.opacity = "1";
       check2.style.display = "none";
       task.style.textDecoration = "none";
       task.style.opacity = "1";
+      updateTaskStatusInStorage(id, false);
     } else {
       check.style.opacity = "0";
       check2.style.display = "block";
       task.style.textDecoration = "line-through";
       task.style.opacity = "0.5";
+      updateTaskStatusInStorage(id, true);
     }
   });
 
@@ -67,7 +85,7 @@ function addTask() {
   const value = taskInput.value.trim();
   if (value !== "") {
     const id = Math.random().toString(36).substr(2, 9);
-    const newTask = { id, text: value };
+    const newTask = { id, text: value, completed: false };
 
     const taskEl = createTaskElement(newTask);
     taskList.append(taskEl);
